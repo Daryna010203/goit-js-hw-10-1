@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import{f as t}from"./assets/vendor-4daf66c6.js";const o=document.querySelector("button");o.classList.add("js-button");t("#datetime-picker",{enableTime:!0,time_24hr:!0,position:"auto center",defaultDate:new Date,minuteIncrement:1,onClose(e){console.log(e[0])}});console.dir(t);
+//# sourceMappingURL=commonHelpers.js.map
