@@ -81,7 +81,7 @@ img {
   font-weight: bold;
 }
 
-.js-button {
+button {
   border-radius: 8px;
   padding: 8px 16px;
   width: 75px;
@@ -96,12 +96,12 @@ img {
   border: none;
 }
 
-.js-button:disabled {
+button:disabled {
   background: #cfcfcf;
   color: #989898;
 }
 
-.js-button:hover {
+button:hover {
   background: #6c8cff;
 }
 
@@ -242,6 +242,7 @@ form button {
   border-radius: 8px;
   padding: 8px 16px;
   height: 40px;
+  width: 360px;
   background: #4e75ff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;

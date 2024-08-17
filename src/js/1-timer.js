@@ -5,7 +5,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const inputBtn = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button');
-startBtn.classList.add('js-button');
 const dayElm = document.querySelector("[data-days]");
 const hourElm = document.querySelector("[data-hours]");
 const minuteElm = document.querySelector("[data-minutes]");
@@ -13,7 +12,6 @@ const secondElm = document.querySelector('[data-seconds]')
 
 startBtn.disabled = true;
 let intervalId;
-let date = new Date();
 let userSelectedDate = '';
 
 const options = {
@@ -24,7 +22,9 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectDatetime = selectedDates[0];
+    const date = new Date();
     if (selectDatetime <= date) {
+      startBtn.disabled = true;
       iziToast.error({
         title: "Invalid date",
         message: "Please choose a date in the future",
@@ -48,8 +48,7 @@ function onBtnClick () {
     if (deltaTime <= 0) {
       
       clearInterval(intervalId);
-      inputBtn.removeAttribute("disabled");
-      updateTimerUI(0, 0, 0, 0);      
+      inputBtn.removeAttribute("disabled");       
       return
     }
     const time = convertMs(deltaTime);

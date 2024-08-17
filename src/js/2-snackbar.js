@@ -17,9 +17,9 @@ function onFormSubmit (event) {
             event.preventDefault();
             
             if (formInfoSnackbar.elements.state.value === "fulfilled"){
-                resolve(delay)                
+                resolve(`Fulfilled promise in ${delay} ms`)                
             } else {
-                reject(delay)
+                reject(`Rejected promise in ${delay} ms`)
             }
             
         }, delay) 
@@ -29,11 +29,11 @@ function onFormSubmit (event) {
     promise.then(result => {
         iziToast.success({
             title: "Ok",
-            message: `Fulfilled promise in ${delay} ms`,
+            message: result,
             position: "topRight"});            ;
     }).catch(error => iziToast.error({
         title: "Error",
-        message: `Rejected promise in ${delay} ms`,
+        message: error,
         position: "topRight"}));
     }
    
